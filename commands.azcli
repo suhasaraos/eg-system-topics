@@ -1,0 +1,7 @@
+rgname=sb-demo2-rg
+sbname=sutest2
+
+az group create -l australiaeast -n $rgname
+
+az deployment group create --resource-group $rgname --template-file sb-topic.bicep \
+--parameters serviceBusNamespaceName=$sbname serviceBusTopicName='t1'
